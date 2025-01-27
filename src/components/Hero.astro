@@ -77,18 +77,18 @@
 
     camera.position.z = 10;
 
-    // Cube fallback
-    const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
-    const cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
+    let model: THREE.Group | null = null;
 
-    function animateCube() {
-        requestAnimationFrame(animateCube);
-        cube.rotation.y += 0.008;
+    function animate() {
+        requestAnimationFrame(animate);
+        
+        if (model) {
+            model.rotation.y += 0.005;
+        }
+        
         renderer.render(scene, camera);
     }
-    animateCube();
+    animate();
 
     // Load model
     console.log('Starting to load model...');
@@ -97,8 +97,7 @@
         '/models/scene.gltf',
         (gltf) => {
             console.log('Model loaded successfully');
-            const model = gltf.scene;
-            scene.remove(cube);
+            model = gltf.scene;
             
             model.traverse((child) => {
                 if ((child as THREE.Mesh).isMesh && (child as THREE.Mesh).material) {
@@ -121,13 +120,6 @@
 
             camera.position.set(0, 0, 15);
             
-            function animate() {
-                requestAnimationFrame(animate);
-                model.rotation.y += 0.012;
-                renderer.render(scene, camera);
-            }
-            animate();
-
             setTimeout(() => {
                 document.getElementById('preloader')?.classList.add('opacity-0', 'pointer-events-none');
                 document.getElementById('heroContent')?.classList.remove('hidden');
