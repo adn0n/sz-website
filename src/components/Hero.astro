@@ -1,123 +1,196 @@
-<section id="mainContent" class="relative w-[99%] mx-auto bg-gradient-animate min-h-[90vh] rounded-3xl p-4 sm:p-8 lg:p-12 flex items-center justify-center">
-    <div class="container mx-auto px-2 sm:px-4 text-center" id="heroContent">
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
-            <span class="inline-block animate-text-reveal" style="--delay: 0.2s">TraderSZ</span>
-            <span class="inline-block animate-text-reveal" style="--delay: 0.5s">Coin</span>
-        </h1>
-        <p class="text-lg sm:text-xl lg:text-2xl text-white/80 max-w-2xl mx-auto mb-6 sm:mb-8">
-            Community-driven charity backed by tradersz
-        </p>
-        
-        <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 animate-fade-up">
-            <div class="bg-white/10 p-4 sm:p-6 rounded-xl backdrop-blur-sm">
-                <h3 class="text-white mb-2">Token Address</h3>
-                <div class="flex items-center gap-2">
-                    <code class="text-white/90 bg-white/5 p-2 rounded text-xs sm:text-sm break-all">HMx1sy5XQ4GmnLYCJ21Ldnv1A3boGRFHgKzLm52ypump</code>
-                    <button 
-                        class="bg-white/20 p-2 rounded hover:bg-white/30 transition-colors"
-                        onclick="navigator.clipboard.writeText('HMx1sy5XQ4GmnLYCJ21Ldnv1A3boGRFHgKzLm52ypump')"
-                    >
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            
-            <div class="bg-white/10 p-4 sm:p-6 rounded-xl backdrop-blur-sm">
-                <h3 class="text-white mb-2">Market Cap</h3>
-                <p class="text-white/90" id="marketCap">
-                    <svg class="animate-spin h-5 w-5 text-white mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                </p>
-            </div>
+<section
+  id="mainContent"
+  class="relative w-[99%] mx-auto min-h-[90vh] rounded-3xl p-4 sm:p-8 lg:p-12 flex items-center justify-center overflow-hidden"
+>
+  <svg class="absolute inset-0 w-full h-full -z-10" preserveAspectRatio="none">
+    <defs>
+      <linearGradient id="gradient" gradientTransform="rotate(-45)">
+        <stop offset="0%" stop-color="#a88b5f">
+          <animate
+            attributeName="offset"
+            values="0;1;0"
+            dur="5s"
+            repeatCount="indefinite"
+          />
+        </stop>
+        <stop offset="25%" stop-color="#98956a">
+          <animate
+            attributeName="offset"
+            values="0.25;1.25;0.25"
+            dur="5s"
+            repeatCount="indefinite"
+          />
+        </stop>
+        <stop offset="50%" stop-color="#889f75">
+          <animate
+            attributeName="offset"
+            values="0.5;1.5;0.5"
+            dur="5s"
+            repeatCount="indefinite"
+          />
+        </stop>
+        <stop offset="75%" stop-color="#789f80">
+          <animate
+            attributeName="offset"
+            values="0.75;1.75;0.75"
+            dur="5s"
+            repeatCount="indefinite"
+          />
+        </stop>
+        <stop offset="100%" stop-color="#689f8b">
+          <animate
+            attributeName="offset"
+            values="1;2;1"
+            dur="5s"
+            repeatCount="indefinite"
+          />
+        </stop>
+      </linearGradient>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#gradient)" />
+  </svg>
+
+  <div class="noise absolute inset-0 opacity-5 pointer-events-none"></div>
+
+  <div class="container mx-auto px-2 sm:px-4 text-center" id="heroContent">
+    <h1
+      class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6"
+    >
+      <span class="inline-block animate-text-reveal" style="--delay: 0.2s"
+        >TraderSZ</span
+      >
+      <span class="inline-block animate-text-reveal" style="--delay: 0.5s"
+        >Coin</span
+      >
+    </h1>
+    <p
+      class="text-lg sm:text-xl lg:text-2xl text-white/80 max-w-2xl mx-auto mb-6 sm:mb-8"
+    >
+      Community-driven charity backed by tradersz
+    </p>
+
+    <div
+      class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 animate-fade-up"
+    >
+      <div class="bg-white/10 p-4 sm:p-6 rounded-xl backdrop-blur-sm">
+        <h3 class="text-white mb-2">Token Address</h3>
+        <div class="flex items-center gap-2">
+          <code
+            class="bg-black/20 p-2 rounded text-xs sm:text-sm break-all bg-clip-text text-transparent bg-gradient-to-r from-[#83ff83] to-[#ffd699] font-bold"
+            >HMx1sy5XQ4GmnLYCJ21Ldnv1A3boGRFHgKzLm52ypump</code
+          >
+          <button
+            class="bg-white/20 p-2 rounded hover:bg-white/30 transition-colors"
+            onclick="navigator.clipboard.writeText('HMx1sy5XQ4GmnLYCJ21Ldnv1A3boGRFHgKzLm52ypump')"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+              ></path>
+            </svg>
+          </button>
         </div>
+      </div>
+
+      <div class="bg-white/10 p-4 sm:p-6 rounded-xl backdrop-blur-sm">
+        <h3 class="text-white mb-2">Market Cap</h3>
+        <p class="text-white/90" id="marketCap">
+          <svg
+            class="animate-spin h-5 w-5 text-white mx-auto"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <circle
+              class="opacity-25"
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="currentColor"
+              stroke-width="4"></circle>
+            <path
+              class="opacity-75"
+              fill="currentColor"
+              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+            ></path>
+          </svg>
+        </p>
+      </div>
     </div>
+  </div>
 </section>
 
 <script>
-    async function fetchMarketCap() {
-        try {
-            const response = await fetch('https://api.dexscreener.com/latest/dex/tokens/HMx1sy5XQ4GmnLYCJ21Ldnv1A3boGRFHgKzLm52ypump');
-            const data = await response.json();
-            const marketCap = data?.pairs?.[0]?.fdv || 'N/A';
-            const marketCapElement = document.getElementById('marketCap');
-            if (marketCapElement) {
-                marketCapElement.textContent = `$${Math.round(marketCap * 0.49).toLocaleString()}`;
-            }
-        } catch (error) {
-            console.error('Error fetching market cap:', error);
-            const marketCapElement = document.getElementById('marketCap');
-            if (marketCapElement) {
-                marketCapElement.textContent = 'Unable to load';
-            }
-        }
+  async function fetchMarketCap() {
+    try {
+      const response = await fetch(
+        "https://api.dexscreener.com/latest/dex/tokens/HMx1sy5XQ4GmnLYCJ21Ldnv1A3boGRFHgKzLm52ypump"
+      );
+      const data = await response.json();
+      const marketCap = data?.pairs?.[0]?.fdv || "N/A";
+      const marketCapElement = document.getElementById("marketCap");
+      if (marketCapElement) {
+        marketCapElement.textContent = `$${Math.round(marketCap * 0.49).toLocaleString()}`;
+      }
+    } catch (error) {
+      console.error("Error fetching market cap:", error);
+      const marketCapElement = document.getElementById("marketCap");
+      if (marketCapElement) {
+        marketCapElement.textContent = "Unable to load";
+      }
     }
+  }
 
-    fetchMarketCap();
+  fetchMarketCap();
 </script>
 
 <style>
-    @keyframes fade-up {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
     }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-    .animate-fade-up {
-        animation: fade-up 0.6s ease-out forwards;
-    }
+  .animate-fade-up {
+    animation: fade-up 0.6s ease-out forwards;
+  }
 
-    @keyframes text-reveal {
-        0% {
-            opacity: 0;
-            filter: blur(8px);
-        }
-        10% {
-            opacity: 1;
-            filter: blur(8px);
-        }
-        100% {
-            opacity: 1;
-            filter: blur(0px);
-        }
+  @keyframes text-reveal {
+    0% {
+      opacity: 0;
+      filter: blur(8px);
     }
+    10% {
+      opacity: 1;
+      filter: blur(8px);
+    }
+    100% {
+      opacity: 1;
+      filter: blur(0px);
+    }
+  }
 
-    .animate-text-reveal {
-        opacity: 0;
-        animation: text-reveal 0.7s ease-out forwards;
-        animation-delay: var(--delay);
-    }
-    
-    @keyframes gradient {
-        0% {
-            background-position: 0% 50%;
-        }
-        50% {
-            background-position: 100% 50%;
-        }
-        100% {
-            background-position: 0% 50%;
-        }
-    }
+  .animate-text-reveal {
+    opacity: 0;
+    animation: text-reveal 0.7s ease-out forwards;
+    animation-delay: var(--delay);
+  }
 
-    .bg-gradient-animate {
-        background: linear-gradient(
-            -45deg,
-            #a88b5f,
-            #98956a,
-            #889f75,
-            #789f80,
-            #689f8b
-        );
-        background-size: 300% 300%;
-        animation: gradient 12s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
-    }
+  .noise {
+    background-image: url('data:image/png;base64,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');
+  }
 </style>
