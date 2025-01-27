@@ -1,0 +1,56 @@
+<nav class="flex items-center justify-between px-10 py-6 bg-white">
+    <div class="text-2xl font-bold text-black">TraderSZ Coin</div>
+    <div class="absolute left-1/2 -translate-x-1/2">
+        <div class="relative flex bg-gray-200 rounded-full p-1.5 gap-1.5" id="nav-container">
+            <!-- Navigation Items -->
+            <a href="#about" class="nav-item relative z-10 px-4 py-2 text-sm rounded-full text-gray-500 transition-all duration-300">About</a>
+            <a href="#tokenomics" class="nav-item relative z-10 px-4 py-2 text-sm rounded-full text-gray-500 transition-all duration-300">Tokenomics</a>
+            
+            <!-- Animated Background Slider -->
+            <div class="slider absolute opacity-0 h-full bg-white rounded-full shadow-sm transition-all duration-300 ease-in-out"></div>
+        </div>
+    </div>
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navItems = document.querySelectorAll('.nav-item');
+        const slider = document.querySelector('.slider') as HTMLElement;
+        const container = document.querySelector('#nav-container');
+    
+        function updateSliderPosition(element: HTMLElement) {
+            const itemRect = element.getBoundingClientRect();
+            const containerRect = container!.getBoundingClientRect();
+            
+            slider!.style.width = `${itemRect.width}px`;
+            slider!.style.height = `${itemRect.height - 2}px`; 
+            slider!.style.left = `${itemRect.left - containerRect.left}px`;
+            slider!.style.top = `${itemRect.top - containerRect.top}px`; 
+            slider!.style.opacity = '1';
+        }
+    
+        navItems.forEach(item => {
+            (item as HTMLElement).addEventListener('mouseenter', () => {
+                updateSliderPosition(item as HTMLElement);
+                (item as HTMLElement).classList.add('text-black');
+            });
+    
+            item.addEventListener('mouseleave', () => {
+                slider!.style.opacity = '0';
+                item.classList.remove('text-black');
+            });
+        });
+    });
+    </script>
+
+<style>
+.slider {
+    pointer-events: none;
+    transition-property: opacity, width, left;
+    margin: 1px 0; 
+}
+
+.nav-item:hover {
+    color: black !important;
+}
+</style>
