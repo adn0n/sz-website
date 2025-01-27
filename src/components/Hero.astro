@@ -1,22 +1,22 @@
-<section id="mainContent" class="relative w-[99%] mx-auto bg-[#a88b5f] h-[90vh] rounded-3xl p-12 flex items-center justify-center">
-    <div id="preloader" class="absolute inset-0 z-10 flex items-center justify-center rounded-3xl">
+<section id="mainContent" class="relative w-[99%] mx-auto bg-[#a88b5f] min-h-[90vh] rounded-3xl p-4 sm:p-8 lg:p-12 flex items-center justify-center">
+    <!-- <div id="preloader" class="absolute inset-0 z-10 flex items-center justify-center rounded-3xl">
         <canvas id="modelCanvas" class="relative w-[99%] mx-auto bg-[#a88b5f] h-[90vh] rounded-3xl p-12 flex items-center justify-center"></canvas>
-    </div>    
+    </div>     -->
 
-    <div class="container mx-auto px-4 text-center hidden" id="heroContent">
-        <h1 class="text-5xl font-bold text-white mb-6">
-            <span class="inline-block animate-text-reveal" style="--delay: 0s">TraderSZ</span>
+    <div class="container mx-auto px-2 sm:px-4 text-center" id="heroContent">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
+            <span class="inline-block animate-text-reveal" style="--delay: 0.2s">TraderSZ</span>
             <span class="inline-block animate-text-reveal" style="--delay: 0.5s">Coin</span>
         </h1>
-        <p class="text-2xl text-white/80 max-w-2xl mx-auto mb-8">
+        <p class="text-lg sm:text-xl lg:text-2xl text-white/80 max-w-2xl mx-auto mb-6 sm:mb-8">
             Community-driven charity backed by tradersz, greatest trader xyz
         </p>
         
-        <div class="flex justify-center gap-8 animate-fade-up">
-            <div class="bg-white/10 p-6 rounded-xl backdrop-blur-sm">
+        <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 animate-fade-up">
+            <div class="bg-white/10 p-4 sm:p-6 rounded-xl backdrop-blur-sm">
                 <h3 class="text-white mb-2">Token Address</h3>
                 <div class="flex items-center gap-2">
-                    <code class="text-white/90 bg-white/5 p-2 rounded">HMx1sy5XQ4GmnLYCJ21Ldnv1A3boGRFHgKzLm52ypump</code>
+                    <code class="text-white/90 bg-white/5 p-2 rounded text-xs sm:text-sm break-all">HMx1sy5XQ4GmnLYCJ21Ldnv1A3boGRFHgKzLm52ypump</code>
                     <button 
                         class="bg-white/20 p-2 rounded hover:bg-white/30 transition-colors"
                         onclick="navigator.clipboard.writeText('HMx1sy5XQ4GmnLYCJ21Ldnv1A3boGRFHgKzLm52ypump')"
@@ -28,7 +28,7 @@
                 </div>
             </div>
             
-            <div class="bg-white/10 p-6 rounded-xl backdrop-blur-sm">
+            <div class="bg-white/10 p-4 sm:p-6 rounded-xl backdrop-blur-sm">
                 <h3 class="text-white mb-2">Market Cap</h3>
                 <p class="text-white/90" id="marketCap">
                     <svg class="animate-spin h-5 w-5 text-white mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -42,106 +42,106 @@
 </section>
 
 <script>
-    import * as THREE from 'three';
-    import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+    // import * as THREE from 'three';
+    // import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
-    const section = document.getElementById('mainContent');
-    const canvas = document.getElementById('modelCanvas') as HTMLCanvasElement;
+    // const section = document.getElementById('mainContent');
+    // const canvas = document.getElementById('modelCanvas') as HTMLCanvasElement;
     
-    // Get section dimensions
-    const sectionRect = section?.getBoundingClientRect();
-    const width = sectionRect?.width || window.innerWidth;
-    const height = sectionRect?.height || window.innerHeight;
+    // // Get section dimensions
+    // const sectionRect = section?.getBoundingClientRect();
+    // const width = sectionRect?.width || window.innerWidth;
+    // const height = sectionRect?.height || window.innerHeight;
 
-    const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xa88b5f); 
+    // const scene = new THREE.Scene();
+    // scene.background = new THREE.Color(0xa88b5f); 
 
-    const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
-    renderer.setSize(width, height);
+    // const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+    // const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+    // renderer.setSize(width, height);
 
-    // Add lights
-    const ambientLight = new THREE.AmbientLight(0xffffff, 2);
-    scene.add(ambientLight);
-    const directionalLight = new THREE.DirectionalLight(0xffd700, 3);
-    directionalLight.position.set(5, 5, 5);
-    scene.add(directionalLight);
+    // // Add lights
+    // const ambientLight = new THREE.AmbientLight(0xffffff, 2);
+    // scene.add(ambientLight);
+    // const directionalLight = new THREE.DirectionalLight(0xffd700, 3);
+    // directionalLight.position.set(5, 5, 5);
+    // scene.add(directionalLight);
 
-    const pointLight1 = new THREE.PointLight(0xffd700, 8);
-    pointLight1.position.set(-5, 0, 5);
-    scene.add(pointLight1);
+    // const pointLight1 = new THREE.PointLight(0xffd700, 8);
+    // pointLight1.position.set(-5, 0, 5);
+    // scene.add(pointLight1);
 
-    const pointLight2 = new THREE.PointLight(0xffd700, 8);
-    pointLight2.position.set(5, 0, -5);
-    scene.add(pointLight2);
+    // const pointLight2 = new THREE.PointLight(0xffd700, 8);
+    // pointLight2.position.set(5, 0, -5);
+    // scene.add(pointLight2);
 
-    camera.position.z = 10;
+    // camera.position.z = 10;
 
-    let model: THREE.Group | null = null;
+    // let model: THREE.Group | null = null;
 
-    function animate() {
-        requestAnimationFrame(animate);
+    // function animate() {
+    //     requestAnimationFrame(animate);
         
-        if (model) {
-            model.rotation.y += 0.005;
-        }
+    //     if (model) {
+    //         model.rotation.y += 0.005;
+    //     }
         
-        renderer.render(scene, camera);
-    }
-    animate();
+    //     renderer.render(scene, camera);
+    // }
+    // animate();
 
-    // Load model
-    console.log('Starting to load model...');
-    const loader = new GLTFLoader();
-    loader.load(
-        '/models/scene.gltf',
-        (gltf) => {
-            console.log('Model loaded successfully');
-            model = gltf.scene;
+    // // Load model
+    // console.log('Starting to load model...');
+    // const loader = new GLTFLoader();
+    // loader.load(
+    //     '/models/scene.gltf',
+    //     (gltf) => {
+    //         console.log('Model loaded successfully');
+    //         model = gltf.scene;
             
-            model.traverse((child) => {
-                if ((child as THREE.Mesh).isMesh && (child as THREE.Mesh).material) {
-                    if ('metalness' in (child as THREE.Mesh).material) {
-                        const material = (child as THREE.Mesh).material as THREE.MeshStandardMaterial;
-                        material.metalness = 1.0;
-                        material.roughness = 0.1;
-                        material.envMapIntensity = 3;
-                        material.color.setHex(0xffd700);
-                    }
-                }
-            });
+    //         model.traverse((child) => {
+    //             if ((child as THREE.Mesh).isMesh && (child as THREE.Mesh).material) {
+    //                 if ('metalness' in (child as THREE.Mesh).material) {
+    //                     const material = (child as THREE.Mesh).material as THREE.MeshStandardMaterial;
+    //                     material.metalness = 1.0;
+    //                     material.roughness = 0.1;
+    //                     material.envMapIntensity = 3;
+    //                     material.color.setHex(0xffd700);
+    //                 }
+    //             }
+    //         });
 
-            model.scale.set(0.8, 0.8, 0.8);
+    //         model.scale.set(0.8, 0.8, 0.8);
             
-            model.position.set(0, 0, 0);
-            model.rotation.set(0, Math.PI / 2, 0);
+    //         model.position.set(0, 0, 0);
+    //         model.rotation.set(0, Math.PI / 2, 0);
             
-            scene.add(model);
+    //         scene.add(model);
 
-            camera.position.set(0, 0, 15);
+    //         camera.position.set(0, 0, 15);
             
-            setTimeout(() => {
-                document.getElementById('preloader')?.classList.add('opacity-0', 'pointer-events-none');
-                document.getElementById('heroContent')?.classList.remove('hidden');
-                document.getElementById('preloader')?.addEventListener('transitionend', () => {
-                    document.getElementById('preloader')?.classList.add('hidden');
-                });
-            }, 1500);
-        },
-        (progress) => console.log('Loading:', (progress.loaded / progress.total * 100) + '%'),
-        (error) => console.error('Error:', error)
-    );
+    //         setTimeout(() => {
+    //             document.getElementById('preloader')?.classList.add('opacity-0', 'pointer-events-none');
+    //             document.getElementById('heroContent')?.classList.remove('hidden');
+    //             document.getElementById('preloader')?.addEventListener('transitionend', () => {
+    //                 document.getElementById('preloader')?.classList.add('hidden');
+    //             });
+    //         }, 1500);
+    //     },
+    //     (progress) => console.log('Loading:', (progress.loaded / progress.total * 100) + '%'),
+    //     (error) => console.error('Error:', error)
+    // );
 
-    // Update resize handler
-    window.addEventListener('resize', () => {
-        const newRect = section?.getBoundingClientRect();
-        const newWidth = newRect?.width || window.innerWidth;
-        const newHeight = newRect?.height || window.innerHeight;
+    // // Update resize handler
+    // window.addEventListener('resize', () => {
+    //     const newRect = section?.getBoundingClientRect();
+    //     const newWidth = newRect?.width || window.innerWidth;
+    //     const newHeight = newRect?.height || window.innerHeight;
         
-        camera.aspect = newWidth / newHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(newWidth, newHeight);
-    });
+    //     camera.aspect = newWidth / newHeight;
+    //     camera.updateProjectionMatrix();
+    //     renderer.setSize(newWidth, newHeight);
+    // });
 
     async function fetchMarketCap() {
         try {
@@ -165,9 +165,9 @@
 </script>
 
 <style>
-    #preloader {
+    /* #preloader {
         transition: opacity 0.3s ease-out;
-    }
+    } */
 
     @keyframes fade-up {
         from {
