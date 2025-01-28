@@ -8,7 +8,7 @@
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {/* Standard tokenomics boxes */}
-        <div class="relative group">
+        <div class="relative hidden md:block group">
           <div class="absolute -inset-0.5 bg-gradient-to-br from-[#4d9f4d] to-[#a88b5f] rounded-lg blur-md opacity-0 group-hover:opacity-75 transition-all duration-500"></div>
           <div class="bg-gray-800 relative overflow-hidden rounded-lg p-6 text-center transition-all duration-500">
             <div class="absolute inset-0 bg-gradient-to-br from-[#4d9f4d] to-[#a88b5f] opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
@@ -16,8 +16,16 @@
             <p class="text-gray-300 group-hover:text-white transition-colors duration-500 relative z-10">100% of Liquidity Pool tokens burned</p>
           </div>
         </div>
-  
-        <div class="relative group">
+        
+        {/* Mobile version without hover effects */}
+        <div class="relative md:hidden">
+          <div class="bg-gray-800 rounded-lg p-6 text-center">
+            <h3 class="text-xl font-semibold text-white mb-2">LP Burned</h3>
+            <p class="text-gray-300">100% of Liquidity Pool tokens burned</p>
+          </div>
+        </div>
+
+        <div class="relative hidden md:block group">
           <div class="absolute -inset-0.5 bg-gradient-to-br from-[#4d9f4d] to-[#a88b5f] rounded-lg blur-md opacity-0 group-hover:opacity-75 transition-all duration-500"></div>
           <div class="bg-gray-800 relative overflow-hidden rounded-lg p-6 text-center transition-all duration-500">
             <div class="absolute inset-0 bg-gradient-to-br from-[#4d9f4d] to-[#a88b5f] opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
@@ -25,8 +33,16 @@
             <p class="text-gray-300 group-hover:text-white transition-colors duration-500 relative z-10">Ownership renounced for maximum security</p>
           </div>
         </div>
-  
-        <div class="relative group">
+
+        {/* Mobile version without hover effects */}
+        <div class="relative md:hidden">
+          <div class="bg-gray-800 rounded-lg p-6 text-center">
+            <h3 class="text-xl font-semibold text-white mb-2">Contract Renounced</h3>
+            <p class="text-gray-300">Ownership renounced for maximum security</p>
+          </div>
+        </div>
+
+        <div class="relative hidden md:block group">
           <div class="absolute -inset-0.5 bg-gradient-to-br from-[#4d9f4d] to-[#a88b5f] rounded-lg blur-md opacity-0 group-hover:opacity-75 transition-all duration-500"></div>
           <div class="bg-gray-800 relative overflow-hidden rounded-lg p-6 text-center transition-all duration-500">
             <div class="absolute inset-0 bg-gradient-to-br from-[#4d9f4d] to-[#a88b5f] opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
@@ -34,7 +50,15 @@
             <p class="text-gray-300 group-hover:text-white transition-colors duration-500 relative z-10">No taxes on transactions<br/>0% buy and sell tax</p>
           </div>
         </div>
-  
+
+        {/* Mobile version without hover effects */}
+        <div class="relative md:hidden">
+          <div class="bg-gray-800 rounded-lg p-6 text-center">
+            <h3 class="text-xl font-semibold text-white mb-2">Zero Tax</h3>
+            <p class="text-gray-300">No taxes on transactions<br/>0% buy and sell tax</p>
+          </div>
+        </div>
+
         {/* Token Burn box */}
         <div class="relative group">
           <div class="absolute -inset-0.5 bg-gradient-to-br from-[#4d9f4d] to-[#a88b5f] rounded-lg blur-md opacity-75"></div>
