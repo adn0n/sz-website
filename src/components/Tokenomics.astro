@@ -65,6 +65,13 @@
     font-display: swap;
   }
 
+  /* Hide glow effects on mobile, only show on md breakpoint and up */
+  @media (max-width: 768px) {
+    .glow-container::before {
+      display: none;
+    }
+  }
+
   .glow-container {
     position: relative;
     overflow: hidden;
