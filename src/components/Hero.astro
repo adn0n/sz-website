@@ -1,17 +1,20 @@
 <div class="bg-wrapper">
+  <div class="noise-overlay"></div>
   <section
     id="mainContent"
-    class="relative w-[100%] mx-auto min-h-[100vh] p-4 sm:p-8 lg:p-12 flex items-center justify-center"
+    class="relative w-[100%] mx-auto min-h-[100vh] p-4 sm:p-8 lg:p-12 flex items-center justify-center overflow-hidden"
   >
     <img
-      src="https://i.pinimg.com/originals/3f/95/2f/3f952fe5f74eb70751cf5d84a499f1c2.gif"
+      src="https://img.itch.zone/aW1hZ2UvMTA0NjA5MS81OTc5MDg0LnBuZw==/original/m2T1ag.png"
       alt="Background"
       class="absolute inset-0 w-full h-full object-cover object-[30%_center] -z-10"
     />
 
+    <div class="absolute inset-0 bg-black/40 -z-10"></div>
+
     <div class="noise absolute inset-0 opacity-5 pointer-events-none"></div>
 
-    <div class="container mx-auto px-2 sm:px-4 text-center" id="heroContent">
+    <div class="container mx-auto px-2 sm:px-4 text-center relative z-20" id="heroContent">
       <h1
         class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6"
       >
@@ -261,5 +264,61 @@
     height: 100%;
     overflow: hidden;
     -webkit-overflow-scrolling: touch;
+  }
+
+  .noise-overlay {
+    position: absolute;
+    top: -400%;
+    left: -400%;
+    right: -400%;
+    bottom: -400%;
+    background: url('https://framerusercontent.com/images/rR6HYXBrMmX4cRpXfXUOvpvpB0.png');
+    background-size: 256px 256px;
+    opacity: 0.15;
+    animation: noise 1s steps(2) infinite;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  @keyframes noise {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    10% {
+      transform: translate3d(-5%, -5%, 0);
+    }
+    20% {
+      transform: translate3d(10%, 5%, 0);
+    }
+    30% {
+      transform: translate3d(5%, -10%, 0);
+    }
+    40% {
+      transform: translate3d(-5%, 15%, 0);
+    }
+    50% {
+      transform: translate3d(-10%, 5%, 0);
+    }
+    60% {
+      transform: translate3d(15%, 0, 0);
+    }
+    70% {
+      transform: translate3d(0, 10%, 0);
+    }
+    80% {
+      transform: translate3d(-15%, 0, 0);
+    }
+    90% {
+      transform: translate3d(10%, 5%, 0);
+    }
+    100% {
+      transform: translate3d(5%, 0, 0);
+    }
+  }
+
+  #heroContent, 
+  .container {
+    position: relative;
+    z-index: 20;
   }
 </style>
