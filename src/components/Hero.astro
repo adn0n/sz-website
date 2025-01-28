@@ -16,19 +16,21 @@
 
     <div class="container mx-auto px-2 sm:px-4 text-center relative z-20" id="heroContent">
       <h1
-        class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6"
+        class="text-3xl sm:text-4xl lg:text-6xl font-bold font-morris text-white mb-4 sm:mb-6"
       >
         <span class="inline-block animate-text-reveal" style="--delay: 0.2s"
-          >TraderSZ</span
+          >traderSZ</span
         >
         <span class="inline-block animate-text-reveal" style="--delay: 0.5s"
-          >Coin</span
+          >coin</span
         >
       </h1>
       <p
-        class="text-lg sm:text-xl lg:text-2xl text-white/80 max-w-2xl mx-auto mb-6 sm:mb-8"
+        class="text-lg sm:text-xl lg:text-2xl text-white/90 max-w-2xl mx-auto mb-6 sm:mb-8"
       >
-        Community-driven charity backed by tradersz
+        <span class="inline-block animate-text-reveal" style="--delay: 0.8s">Community-driven charity</span>
+        <span class="inline-block animate-text-reveal" style="--delay: 1s">backed by</span>
+        <span class="inline-block animate-text-reveal" style="--delay: 1.2s">tradersz</span>
       </p>
 
       <div
@@ -187,6 +189,14 @@
 </script>
 
 <style>
+    @font-face {
+  font-family: 'Morris';
+  src: url('/fonts/morris.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
   @keyframes fade-up {
     from {
       opacity: 0;
@@ -322,3 +332,4 @@
     z-index: 20;
   }
 </style>
+
