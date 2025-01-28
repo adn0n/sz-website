@@ -1,111 +1,120 @@
-<section
-  id="mainContent"
-  class="relative w-[100%] mx-auto min-h-[90vh] p-4 sm:p-8 lg:p-12 flex items-center justify-center overflow-hidden"
->
-  <div 
-    class="absolute inset-0 w-full h-full -z-10 bg-cover bg-fixed sm:bg-center bg-no-repeat"
-    style="background-image: url('https://i.pinimg.com/originals/3f/95/2f/3f952fe5f74eb70751cf5d84a499f1c2.gif'); background-position: 30% center; transform: translateZ(0);"
-  ></div>
+<div class="bg-wrapper">
+  <section
+    id="mainContent"
+    class="relative w-[100%] mx-auto min-h-[90vh] p-4 sm:p-8 lg:p-12 flex items-center justify-center"
+  >
+    <img
+      src="https://i.pinimg.com/originals/3f/95/2f/3f952fe5f74eb70751cf5d84a499f1c2.gif"
+      alt="Background"
+      class="absolute inset-0 w-full h-full object-cover object-[30%_center] -z-10"
+    />
 
-  <div class="noise absolute inset-0 opacity-5 pointer-events-none"></div>
+    <div class="noise absolute inset-0 opacity-5 pointer-events-none"></div>
 
-  <div class="container mx-auto px-2 sm:px-4 text-center" id="heroContent">
-    <h1
-      class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6"
-    >
-      <span class="inline-block animate-text-reveal" style="--delay: 0.2s"
-        >TraderSZ</span
+    <div class="container mx-auto px-2 sm:px-4 text-center" id="heroContent">
+      <h1
+        class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6"
       >
-      <span class="inline-block animate-text-reveal" style="--delay: 0.5s"
-        >Coin</span
+        <span class="inline-block animate-text-reveal" style="--delay: 0.2s"
+          >TraderSZ</span
+        >
+        <span class="inline-block animate-text-reveal" style="--delay: 0.5s"
+          >Coin</span
+        >
+      </h1>
+      <p
+        class="text-lg sm:text-xl lg:text-2xl text-white/80 max-w-2xl mx-auto mb-6 sm:mb-8"
       >
-    </h1>
-    <p
-      class="text-lg sm:text-xl lg:text-2xl text-white/80 max-w-2xl mx-auto mb-6 sm:mb-8"
-    >
-      Community-driven charity backed by tradersz
-    </p>
+        Community-driven charity backed by tradersz
+      </p>
 
-    <div
-      class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 animate-fade-up"
-    >
-      <div class="bg-black/60 p-4 sm:p-6 rounded-xl backdrop-blur-md border border-white/10">
-        <h3 class="text-white mb-2">Token Address</h3>
-        <div class="flex items-center gap-2">
-          <code
-            class="bg-black/40 p-2 rounded text-xs sm:text-sm break-all bg-clip-text text-transparent bg-gradient-to-r from-[#83ff83] to-[#ffd699] font-bold"
-            >HMx1sy5XQ4GmnLYCJ21Ldnv1A3boGRFHgKzLm52ypump</code
-          >
-          <button
-            class="bg-white/30 p-2 rounded hover:bg-white/40 transition-colors"
-            id="copyButton"
+      <div
+        class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 animate-fade-up mt-32 sm:mt-0"
+      >
+        <div
+          class="bg-black/60 p-4 sm:p-6 rounded-xl backdrop-blur-sm border border-white/10"
+        >
+          <h3 class="text-white mb-2">Token Address</h3>
+          <div class="flex items-center gap-2">
+            <code
+              class="bg-black/40 p-2 rounded text-xs sm:text-sm break-all bg-clip-text text-transparent bg-gradient-to-r from-[#83ff83] to-[#ffd699] font-bold"
+              >HMx1sy5XQ4GmnLYCJ21Ldnv1A3boGRFHgKzLm52ypump</code
+            >
+            <button
+              class="bg-white/30 p-2 rounded hover:bg-white/40 transition-colors"
+              id="copyButton"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 text-white copy-icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                ></path>
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 text-white check-icon hidden"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="bg-black/60 p-4 sm:p-6 rounded-xl backdrop-blur-sm border border-white/10"
+        >
+          <h3 class="text-white mb-2">Market Cap</h3>
+          <p
+            class="text-white/90 transition-all duration-300 text-xl"
+            id="marketCap"
           >
             <svg
+              class="animate-spin h-5 w-5 text-white mx-auto"
               xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 text-white copy-icon"
               fill="none"
               viewBox="0 0 24 24"
-              stroke="currentColor"
             >
+              <circle
+                class="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                stroke-width="4"></circle>
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                class="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
               ></path>
             </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 text-white check-icon hidden"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M5 13l4 4L19 7"
-              ></path>
-            </svg>
-          </button>
+          </p>
         </div>
       </div>
-
-      <div class="bg-black/60 p-4 sm:p-6 rounded-xl backdrop-blur-md border border-white/10">
-        <h3 class="text-white mb-2">Market Cap</h3>
-        <p class="text-white/90 transition-all duration-300 text-xl" id="marketCap">
-          <svg
-            class="animate-spin h-5 w-5 text-white mx-auto"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <circle
-              class="opacity-25"
-              cx="12"
-              cy="12"
-              r="10"
-              stroke="currentColor"
-              stroke-width="4"></circle>
-            <path
-              class="opacity-75"
-              fill="currentColor"
-              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-            ></path>
-          </svg>
-        </p>
-      </div>
     </div>
-  </div>
-  <!-- <div class="absolute bottom-8 left-8 sm:bottom-12 sm:left-12 z-10 w-32 sm:w-48 h-32 sm:h-48 pointer-events-none">
-    <img
-      src="https://cdna.artstation.com/p/assets/images/images/020/833/710/original/francesco-montibello-gandalf-1.gif?1569345311"
-      alt="Gandalf sprite"
-      class="w-full h-full object-contain mix-blend-luminosity opacity-70"
-    />
-  </div> -->
-</section>
+    <!-- <div class="absolute bottom-8 left-8 sm:bottom-12 sm:left-12 z-10 w-32 sm:w-48 h-32 sm:h-48 pointer-events-none">
+      <img
+        src="https://cdna.artstation.com/p/assets/images/images/020/833/710/original/francesco-montibello-gandalf-1.gif?1569345311"
+        alt="Gandalf sprite"
+        class="w-full h-full object-contain mix-blend-luminosity opacity-70"
+      />
+    </div> -->
+  </section>
+</div>
 
 <script>
   let previousValue = 0;
@@ -115,22 +124,22 @@
       const response = await fetch(
         "https://api.dexscreener.com/latest/dex/tokens/HMx1sy5XQ4GmnLYCJ21Ldnv1A3boGRFHgKzLm52ypump",
         {
-          cache: 'no-cache' 
+          cache: "no-cache",
         }
       );
       const data = await response.json();
       const marketCap = parseFloat(data?.pairs?.[0]?.fdv) || 0;
       const marketCapElement = document.getElementById("marketCap");
-      
+
       if (marketCapElement) {
         const newValue = Math.round(marketCap * 0.49);
-        
+
         if (previousValue !== newValue) {
-          marketCapElement.classList.add('animate-value-change');
+          marketCapElement.classList.add("animate-value-change");
           setTimeout(() => {
-            marketCapElement.classList.remove('animate-value-change');
+            marketCapElement.classList.remove("animate-value-change");
           }, 300);
-          
+
           marketCapElement.textContent = `$${newValue.toLocaleString()}`;
           previousValue = newValue;
         }
@@ -144,29 +153,31 @@
     }
   }
 
-  const copyButton = document.getElementById('copyButton');
-  
-  copyButton?.addEventListener('click', () => {
-    const copyIcon = document.querySelector('.copy-icon');
-    const checkIcon = document.querySelector('.check-icon');
-    
+  const copyButton = document.getElementById("copyButton");
+
+  copyButton?.addEventListener("click", () => {
+    const copyIcon = document.querySelector(".copy-icon");
+    const checkIcon = document.querySelector(".check-icon");
+
     if (!copyIcon || !checkIcon) return;
-    
-    navigator.clipboard.writeText('HMx1sy5XQ4GmnLYCJ21Ldnv1A3boGRFHgKzLm52ypump');
-    
-    copyIcon.classList.add('hidden');
-    checkIcon.classList.remove('hidden');
-    
+
+    navigator.clipboard.writeText(
+      "HMx1sy5XQ4GmnLYCJ21Ldnv1A3boGRFHgKzLm52ypump"
+    );
+
+    copyIcon.classList.add("hidden");
+    checkIcon.classList.remove("hidden");
+
     setTimeout(() => {
-      copyIcon.classList.remove('hidden');
-      checkIcon.classList.add('hidden');
+      copyIcon.classList.remove("hidden");
+      checkIcon.classList.add("hidden");
     }, 1000);
   });
 
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener("DOMContentLoaded", () => {
     // Initial fetch
     fetchMarketCap();
-    
+
     // Update every 10 seconds
     setInterval(fetchMarketCap, 10000);
   });
@@ -210,7 +221,7 @@
   }
 
   .noise {
-    background-image: url('data:image/png;base64,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');
+    background-image: url("data:image/png;base64,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");
   }
 
   @keyframes value-change {
@@ -233,14 +244,22 @@
   }
 
   @font-face {
-    font-family: 'Tengwar Annatar';
+    font-family: "Tengwar Annatar";
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('/fonts/tnganbi.ttf') format('truetype');
+    src: url("/fonts/tnganbi.ttf") format("truetype");
   }
 
   .font-tengwar {
-    font-family: 'Tengwar Annatar', cursive;
+    font-family: "Tengwar Annatar", cursive;
+  }
+
+  .bg-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
   }
 </style>
