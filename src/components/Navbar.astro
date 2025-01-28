@@ -1,17 +1,18 @@
-<nav class="flex items-center px-4 md:px-10 py-4 bg-white">
-    <div class="text-lg md:text-xl font-bold text-black">TraderSZ Coin</div>
-    <div class="relative ml-auto md:mx-auto">
+<nav class="flex items-center justify-between px-4 md:px-10 py-4">
+    <div class="flex items-center gap-2">
+        <img src="/logo.jpg" alt="TraderSZ Logo" class="w-12 h-12 rounded-full object-cover" />
+        <div class="text-lg md:text-2xl font-bold text-black">TraderSZ Coin</div>
+    </div>
+    <div class="relative">
         <div class="relative flex bg-gray-200 rounded-full p-1.5 gap-1.5" id="nav-container">
             <!-- Navigation Items -->
             <a href="#about" class="nav-item relative z-10 px-3 md:px-4 py-1.5 md:py-2 text-sm rounded-full text-gray-500 transition-all duration-300 text-center">About</a>
-            <a href="#tokenomics" class="nav-item relative z-10 px-3 md:px-4 py-1.5 md:py-2 text-sm rounded-full text-gray-500 transition-all duration-300 text-center">Tokenomics</a>
+            <button class="nav-item relative z-10 px-3 md:px-4 py-1.5 md:py-2 text-sm rounded-full text-gray-500 transition-all duration-300 text-center" id="tokenomics-link">Tokenomics</button>
             
             <!-- Animated Background Slider -->
             <div class="slider absolute opacity-0 h-full bg-white rounded-full shadow-sm transition-all duration-300 ease-in-out"></div>
         </div>
     </div>
-    <!-- Hide the balancing div on mobile, show on desktop -->
-    <div class="hidden md:block w-[120px]"></div>
 </nav>
 
 <script>
@@ -41,6 +42,14 @@
                 slider!.style.opacity = '0';
                 item.classList.remove('text-black');
             });
+        });
+
+        // Add smooth scroll functionality
+        const tokenomicsLink = document.getElementById('tokenomics-link');
+        tokenomicsLink?.addEventListener('click', (e) => {
+            e.preventDefault();
+            const tokenomicsSection = document.querySelector('section h2');
+            tokenomicsSection?.scrollIntoView({ behavior: 'smooth' });
         });
     });
     </script>
