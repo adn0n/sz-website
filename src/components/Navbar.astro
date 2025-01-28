@@ -1,10 +1,10 @@
 <nav class="flex items-center justify-between px-4 md:px-10 py-4">
   <div class="flex items-center gap-2">
-    <img
+    <!-- <img
       src="/logo.jpg"
       alt="TraderSZ Logo"
       class="w-12 h-12 rounded-full object-cover"
-    />
+    /> -->
     <div class="text-lg md:text-3xl font-bold text-black font-morris">
       tradersz coin
     </div>
@@ -63,12 +63,33 @@
       });
     });
 
-    // Add smooth scroll functionality
+    // Update scroll functionality for both About and Tokenomics
+    const aboutLink = document.querySelector('a[href="#about"]');
+    aboutLink?.addEventListener("click", (e) => {
+      e.preventDefault();
+      const aboutSection = document.getElementById('about');
+      if (aboutSection) {
+        const navHeight = document.querySelector('nav')?.offsetHeight || 0;
+        const topOffset = aboutSection.offsetTop - navHeight;
+        window.scrollTo({
+          top: topOffset,
+          behavior: "smooth"
+        });
+      }
+    });
+
     const tokenomicsLink = document.getElementById("tokenomics-link");
     tokenomicsLink?.addEventListener("click", (e) => {
       e.preventDefault();
-      const tokenomicsSection = document.querySelector("section h2");
-      tokenomicsSection?.scrollIntoView({ behavior: "smooth" });
+      const tokenomicsSection = document.getElementById("tokenomics");
+      if (tokenomicsSection) {
+        const navHeight = document.querySelector('nav')?.offsetHeight || 0;
+        const topOffset = tokenomicsSection.offsetTop - navHeight;
+        window.scrollTo({
+          top: topOffset,
+          behavior: "smooth"
+        });
+      }
     });
   });
 </script>
